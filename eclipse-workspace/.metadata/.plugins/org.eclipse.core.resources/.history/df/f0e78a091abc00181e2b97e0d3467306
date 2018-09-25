@@ -1,0 +1,126 @@
+package compositor;
+
+import java.awt.EventQueue;
+
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import java.awt.BorderLayout;
+import java.awt.Color;
+
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+
+public class TestingWindow {
+
+	private JFrame frame;
+	private JPanel figurePane; 
+	private JPanel pentagramPane;
+	private JPanel melodyWritePane;
+	private JPanel melodyRawPanel;
+	
+	private JPanel 
+
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TestingWindow window = new TestingWindow();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public TestingWindow() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		initializeFrameConfiguration();
+		drawFigurePanel();
+		drawMelodyRawPanel();
+		drawMelodyWritePanel();
+		drawPentagramPanel();
+		launchFrame();
+		
+		//pentagramPane.getGraphics().drawLine(0, 0, 20, 20);
+		
+		//frame.getContentPane().add(pentagramPane, BorderLayout.SOUTH);
+		
+		
+		
+		Panel p = new Panel();
+		frame.getContentPane().add(p, BorderLayout.SOUTH);
+
+	}
+
+	private void initializeFrameConfiguration() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(new BorderLayout(0, 0));		
+	}
+	
+	private void drawFigurePanel() {
+		figurePane = new JPanel();
+	}
+	
+	private void drawPentagramPanel() {
+		pentagramPane = new JPanel();
+		Border lineaCyan = BorderFactory.createLineBorder(Color.CYAN);
+		TitledBorder titlePentagram = BorderFactory.createTitledBorder(lineaCyan, "Pentagrama");
+		titlePentagram.setTitleJustification(TitledBorder.CENTER);
+		titlePentagram.setTitleColor(Color.CYAN);
+		pentagramPane.setBorder(titlePentagram);
+	}
+	
+	private void drawMelodyRawPanel() {
+		melodyRawPanel = new JPanel();
+		Border lineaRoja = BorderFactory.createLineBorder(Color.red);
+		TitledBorder title = BorderFactory.createTitledBorder(lineaRoja, "Melodía Resultante (sólo lectura)");
+		title.setTitleJustification(TitledBorder.CENTER);
+		title.setTitleColor(Color.red);
+		melodyRawPanel.setBorder(title);
+		//campo texto que muestra la melodia que se va generando
+		textField = new JTextField();
+		textField.setEditable(false);
+		textField.setColumns(10);
+		melodyRawPanel.add(textField);
+		//boton play
+		JButton playButton = new JButton("Play");
+		melodyRawPanel.add(playButton);
+		//boton clear
+		JButton clearButton = new JButton("Clear");
+		melodyRawPanel.add(clearButton);
+		//boton undo
+		JButton undoButton = new JButton("Undo");
+		melodyRawPanel.add(undoButton);
+		
+	}
+
+	private void drawMelodyWritePanel() {
+	}
+	
+	private void launchFrame() {
+		frame.getContentPane().add(figurePane, BorderLayout.WEST);
+		frame.getContentPane().add(melodyRawPane, BorderLayout.NORTH);
+		frame.getContentPane().add(melodyWritePane, BorderLayout.SOUTH);
+	}
+	
+}

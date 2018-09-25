@@ -1,0 +1,49 @@
+package compositor;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
+
+public class PentagramPanel  extends JPanel{
+	
+	public void initializeComponent() {
+		Border lineaCyan = BorderFactory.createLineBorder(Color.CYAN);
+		TitledBorder titlePentagram = BorderFactory.createTitledBorder(lineaCyan, "Pentagrama");
+		titlePentagram.setTitleJustification(TitledBorder.CENTER);
+		titlePentagram.setTitleColor(Color.CYAN);
+		this.setBorder(titlePentagram);
+	}
+	
+//	public void drawComponent() {
+//		
+//	}
+	
+	 public void paintComponent(Graphics g) {
+		 g.setColor(Color.black);
+		 g.drawLine(10, 20, 800, 20);
+		 g.drawLine(10, 40, 800, 40);
+		 g.drawLine(10, 60, 800, 60);
+		 g.drawLine(10, 80, 800, 80);
+		 g.drawLine(10, 100, 800, 100);
+	}
+	 
+	public static void main(String args[]) {
+		JFrame.setDefaultLookAndFeelDecorated(true);
+	    JFrame frame = new JFrame("Draw Line");
+	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    frame.setBackground(Color.white);
+	    frame.setSize(200, 200);
+	 
+	    PentagramPanel panel = new PentagramPanel();
+	    panel.initializeComponent();
+	 
+	    frame.add(panel);
+	 
+	    frame.setVisible(true);
+	}
+
+}

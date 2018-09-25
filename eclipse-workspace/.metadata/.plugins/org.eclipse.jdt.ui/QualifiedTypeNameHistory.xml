@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="java.awt.event.MouseListener"/>
+<fullyQualifiedTypeName name="compositor.PentagramPanel.Accion"/>
+<fullyQualifiedTypeName name="compositor.PentagramPanel.DrawLine"/>
+<fullyQualifiedTypeName name="java.awt.Canvas"/>
+<fullyQualifiedTypeName name="java.awt.Graphics"/>
+<fullyQualifiedTypeName name="compositor.DrawGrids"/>
+<fullyQualifiedTypeName name="compositor.TestGrid02"/>
+<fullyQualifiedTypeName name="compositor.TestGrid02.CellPane"/>
+<fullyQualifiedTypeName name="javax.swing.JPanel"/>
+<fullyQualifiedTypeName name="java.awt.Graphics2D"/>
+<fullyQualifiedTypeName name="java.awt.Frame"/>
+<fullyQualifiedTypeName name="compositor.DrawLine"/>
+<fullyQualifiedTypeName name="compositor.CompositorWindow.DrawLine"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
+<fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
+<fullyQualifiedTypeName name="compositor.PentagramPanel"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,51 @@
+package compositor;
+
+import java.awt.Color;
+import java.awt.Image;
+
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
+
+public class FigurePanel extends JPanel{
+
+	public FigurePanel() {
+		
+	}
+	
+	public void initializeComponents() {
+		
+	}
+//	figurePanel = new JPanel();
+//	Border blueLine = BorderFactory.createLineBorder(Color.blue);
+//	TitledBorder title = BorderFactory.createTitledBorder(blueLine, "FIGURA");
+//	title.setTitleJustification(TitledBorder.CENTER);
+//	title.setTitleColor(Color.blue);
+//	figurePanel.setBorder(title);
+//	
+//	
+//	lblNewLabel = new JLabel("Figura Fusa");
+//	
+//	ImageIcon imageIcon = new ImageIcon("/home/baila/eclipse-workspace/compositor de melodias/src/images/quaver.png");
+//	Image image = imageIcon.getImage(); // transform it 
+//	Image newimg = image.getScaledInstance(120, 120,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+//	imageIcon = new ImageIcon(newimg);  // transform it back
+//	
+//	lblNewLabel.setIcon(imageIcon);
+//	figurePanel.add(lblNewLabel);
+//	//panel 1 con texto + img1
+//	JPanel quaverPanel = new JPanel();
+//	//URL url = new URL("https://freeiconshop.com/wp-content/uploads/edd/music-quaver-outline.png");
+//	//BufferedImage image = ImageIO.read(url);
+//	//quaverPanel.setIm
+//	//.setIcon(new ImageIcon(image));
+//	
+//	//panel 2 con texto + img2
+//	//JPanel fusePanel = new JPanel();
+//	
+//	//campo texto que muestra la melodia que se va generando
+
+}

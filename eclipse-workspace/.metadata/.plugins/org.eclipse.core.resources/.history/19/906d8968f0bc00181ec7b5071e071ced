@@ -1,0 +1,38 @@
+package compositor;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.border.MatteBorder;
+import javax.swing.border.TitledBorder;
+
+public class PentagramPanel  extends JPanel{
+
+	public void initializeComponent() {
+		Border lineaCyan = BorderFactory.createLineBorder(Color.CYAN);
+		TitledBorder titlePentagram = BorderFactory.createTitledBorder(lineaCyan, "Pentagrama");
+		titlePentagram.setTitleJustification(TitledBorder.CENTER);
+		titlePentagram.setTitleColor(Color.CYAN);
+		this.setBorder(titlePentagram);
+	}
+	
+	@Override
+    public void paintComponent(Graphics g)
+    {
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setColor(Color.BLACK);
+        g2.drawLine(30, 40, 80, 100);
+    }
+}
+

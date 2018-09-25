@@ -1,0 +1,45 @@
+package estudiante;
+
+public class Estudiante {
+	private String apellido;
+	private String nombre;
+	private String legajo;
+	
+	public Estudiante(String apellido, String nombre, String legajo){
+		this.apellido = apellido;
+		this.nombre   = nombre;
+		this.legajo   = legajo;
+	}
+	
+	public String toString(){
+		//return apellido+nombre+legajo;
+		StringBuffer sb = new StringBuffer();
+		return sb.append("Apellido: ")
+				.append(getApellido())
+				.append(" Nombre: ")
+				.append(getNombre())
+				.append(" Legajo: ")
+				.append(getLegajo())
+				.toString();
+	}
+	
+	public String getApellido() {
+		return apellido;
+	}
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	public String getLegajo() {
+		return legajo;
+	}
+	public void setLegajo(String legajo) {
+		this.legajo = legajo;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+}

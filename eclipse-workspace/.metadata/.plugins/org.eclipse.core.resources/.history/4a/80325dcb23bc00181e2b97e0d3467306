@@ -1,0 +1,152 @@
+package compositor;
+
+import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+
+import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import java.awt.BorderLayout;
+import java.awt.Color;
+
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+
+public class TestingWindow {
+
+	private JFrame frame;
+	private JPanel figurePanel; 
+	private JPanel pentagramPanel;
+	private JPanel melodyWritePanel;
+	private JPanel melodyRawPanel;
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TestingWindow window = new TestingWindow();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public TestingWindow() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		initializeFrameConfiguration();
+		drawFigurePanel();
+		drawMelodyRawPanel();
+		drawMelodyWritePanel();
+		drawPentagramPanel();
+		launchFrame();
+	}
+
+	private void initializeFrameConfiguration() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(new BorderLayout(0, 0));	
+		frame.getContentPane().setLayout(new FlowLayout());
+	}
+	
+	private void drawFigurePanel() {
+		figurePanel = new JPanel();
+		Border blueLine = BorderFactory.createLineBorder(Color.blue);
+		TitledBorder title = BorderFactory.createTitledBorder(blueLine, "FIGURA");
+		title.setTitleJustification(TitledBorder.CENTER);
+		title.setTitleColor(Color.blue);
+		figurePanel.setBorder(title);
+		
+		//panel 1 con texto + img1
+		JLabel quaverPanel = new JLabel("Figura Fusa");		
+		ImageIcon imageIcon = new ImageIcon("/home/baila/eclipse-workspace/compositor de melodias/src/images/quaver.png");
+		Image image = imageIcon.getImage(); // transform it 
+		Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+		imageIcon = new ImageIcon(newimg);  // transform it back
+		quaverPanel.setIcon(imageIcon);
+		figurePanel.add(quaverPanel);
+		
+
+		//JPanel quaverPanel = new JPanel();
+		//URL url = new URL("https://freeiconshop.com/wp-content/uploads/edd/music-quaver-outline.png");
+		//BufferedImage image = ImageIO.read(url);
+		//quaverPanel.setIm
+		//.setIcon(new ImageIcon(image));
+		
+		//panel 2 con texto + img2
+		//JPanel fusePanel = new JPanel();
+		
+		//campo texto que muestra la melodia que se va generando
+
+	}
+	
+	private void drawPentagramPanel() {
+		pentagramPanel = new JPanel();
+		Border lineaCyan = BorderFactory.createLineBorder(Color.CYAN);
+		TitledBorder titlePentagram = BorderFactory.createTitledBorder(lineaCyan, "Pentagrama");
+		titlePentagram.setTitleJustification(TitledBorder.CENTER);
+		titlePentagram.setTitleColor(Color.CYAN);
+		pentagramPanel.setBorder(titlePentagram);
+		//Panel p = new Panel();
+		//frame.getContentPane().add(p, BorderLayout.SOUTH);
+	}
+	
+	private void drawMelodyRawPanel() {
+		melodyRawPanel = new JPanel();
+		Border lineaRoja = BorderFactory.createLineBorder(Color.red);
+		TitledBorder title = BorderFactory.createTitledBorder(lineaRoja, "Melodía Resultante (sólo lectura)");
+		title.setTitleJustification(TitledBorder.CENTER);
+		title.setTitleColor(Color.red);
+		melodyRawPanel.setBorder(title);
+		//campo texto que muestra la melodia que se va generando
+		JTextField textField = new JTextField();
+		textField.setEditable(false);
+		textField.setColumns(10);
+		melodyRawPanel.add(textField);
+		//boton play
+		JButton playButton = new JButton("Play");
+		melodyRawPanel.add(playButton);
+		//boton clear
+		JButton clearButton = new JButton("Clear");
+		melodyRawPanel.add(clearButton);
+		//boton undo
+		JButton undoButton = new JButton("Undo");
+		melodyRawPanel.add(undoButton);
+		
+	}
+
+	private void drawMelodyWritePanel() {
+		melodyWritePanel = new JPanel();
+	}
+	
+	private void launchFrame() {
+		frame.getContentPane().add(figurePanel);
+		frame.getContentPane().add(pentagramPanel);
+		frame.getContentPane().add(melodyRawPanel);
+		frame.getContentPane().add(melodyWritePanel);
+	}
+	
+}

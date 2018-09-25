@@ -1,0 +1,12 @@
+package compositor;
+
+import javax.print.DocFlavor.URL;
+
+public class Testing {
+
+	public static void main(String args[]) {
+		String path = "images/img.png";
+		URL url = Testing.class.getResource(path);
+	}
+	
+}

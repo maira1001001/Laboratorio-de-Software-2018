@@ -1,0 +1,67 @@
+package compositor;
+
+import java.awt.Color;
+import java.awt.Image;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
+
+public class FigurePanel extends JPanel{
+	
+	private URL quaverUrl;
+	private URL fuseUrl;
+	
+	public FigurePanel() {
+		this.quaverUrl = new URL("https://freeiconshop.com/wp-content/uploads/edd/music-quaver-outline.png");
+		this.fuseUrl = new URL("https://freeiconshop.com/wp-content/uploads/edd/music-quaver-outline.png");
+	}
+	
+	public void  initializeComponents() {
+
+		defineFeaturePanel();
+		drawQuaverFigure();
+		drawFuseFigure();
+		
+		//panel 1 con texto + img1
+		JLabel quaverPanel = new JLabel("Figura Fusa");
+		try {
+			
+			ImageIcon imageIcon = new ImageIcon(url);
+			Image image = imageIcon.getImage(); // transform it 
+			Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+			imageIcon = new ImageIcon(newimg);  // transform it back
+			quaverPanel.setIcon(imageIcon);
+			this.add(quaverPanel);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private void defineFeaturePanel() {
+		Border blueLine = BorderFactory.createLineBorder(Color.blue);
+		TitledBorder title = BorderFactory.createTitledBorder(blueLine, "FIGURA");
+		title.setTitleJustification(TitledBorder.CENTER);
+		title.setTitleColor(Color.blue);
+		this.setBorder(title);
+		
+	}
+	
+	private void drawQuaverFigure() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	private void drawFuseFigure() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	private 
+}

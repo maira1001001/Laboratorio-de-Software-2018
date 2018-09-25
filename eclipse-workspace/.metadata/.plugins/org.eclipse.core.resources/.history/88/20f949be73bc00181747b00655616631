@@ -1,0 +1,16 @@
+package compositor;
+
+import java.io.File;
+
+public class Testing {
+
+	public static void main(String args[]) {
+		String path = "src/compositor/images/minim.png";
+		Testing t = new Testing();
+		java.net.URL url = t.getClass().getResource(path);
+		System.out.println(url);
+		 File directory = new File("./");
+		   System.out.println(directory.getAbsolutePath());
+	}
+	
+}

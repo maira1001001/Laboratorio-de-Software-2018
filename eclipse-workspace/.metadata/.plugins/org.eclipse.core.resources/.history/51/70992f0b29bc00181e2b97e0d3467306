@@ -1,0 +1,80 @@
+package compositor;
+
+import java.awt.Color;
+import java.awt.Image;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
+
+public class FigurePanel extends JPanel{
+	
+	private String quaverUrl;
+	private String fuseUrl;
+	
+	public FigurePanel() {
+		this.quaverUrl = "https://freeiconshop.com/wp-content/uploads/edd/music-quaver-outline.png";
+		this.fuseUrl = "https://freeiconshop.com/wp-content/uploads/edd/music-quaver-outline.png";
+	}
+	
+	public void  initializeComponents() {
+		defineFeaturePanel();
+		drawQuaverFigure();
+		drawFuseFigure();
+	}
+
+	private void defineFeaturePanel() {
+		Border blueLine = BorderFactory.createLineBorder(Color.blue);
+		TitledBorder title = BorderFactory.createTitledBorder(blueLine, "FIGURA");
+		title.setTitleJustification(TitledBorder.CENTER);
+		title.setTitleColor(Color.blue);
+		this.setBorder(title);
+	}
+	
+	private void drawQuaverFigure() {
+		//panel 1 con texto + img1
+//		JLabel quaverLabel = new JLabel("Figura Fusa");
+//		ImageIcon imageIcon = new ImageIcon(this.quaverUrl);
+//		Image image = imageIcon.getImage(); // transform it 
+//		Image newimg = image.getScaledInstance(30, 30,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+//		imageIcon = new ImageIcon(newimg);  // transform it back
+//		quaverLabel.setIcon(imageIcon);
+//		this.add(quaverLabel);
+
+		JLabel quaverPanel = new JLabel("Figura Corchea");
+		try {
+			URL url = new URL(quaverUrl);
+			ImageIcon imageIcon = new ImageIcon(url);
+			Image image = imageIcon.getImage(); // transform it 
+			Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+			imageIcon = new ImageIcon(newimg);  // transform it back
+			quaverPanel.setIcon(imageIcon);
+			this.add(quaverPanel);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+
+	}
+	
+	private void drawFuseFigure() {
+		// TODO Auto-generated method stub
+	
+		
+	}
+	
+	private ImageIcon createFigureIcon(String url) {
+		return null;
+	}
+	
+	
+	
+	 
+}

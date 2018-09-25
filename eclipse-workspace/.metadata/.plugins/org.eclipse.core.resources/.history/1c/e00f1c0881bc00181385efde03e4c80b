@@ -1,0 +1,97 @@
+package compositor;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
+
+public class PentagramPanel  extends JPanel{
+	
+	public class DrawLine extends JPanel {
+		public void paintComponent(Graphics g) {
+		     //horizontal line
+		     g.setColor(Color.green);
+		     g.drawLine(20, 20, 420, 20);
+		     this.addMouseListener(new Accion());
+		}
+		
+	}
+	class Accion implements MouseListener {
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			System.out.println("mouse clicked");
+			
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			System.out.println("accioooon");
+			
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
+	public void initializeComponent() {
+		Border lineaCyan = BorderFactory.createLineBorder(Color.CYAN);
+		TitledBorder titlePentagram = BorderFactory.createTitledBorder(lineaCyan, "Pentagrama");
+		titlePentagram.setTitleJustification(TitledBorder.CENTER);
+		titlePentagram.setTitleColor(Color.CYAN);
+		this.setBorder(titlePentagram);
+	}
+	
+	public void drawLines() {
+		DrawLine line = new DrawLine();
+		line.addMouseListener(new Accion());
+	}
+
+//	 public void paintComponent(Graphics g) {
+//		//horizontal line
+//	     g.setColor(Color.green);
+//	     g.drawLine(20, 20, 420, 20);
+//	 
+//	}
+	 
+	public static void main(String args[]) {
+		JFrame.setDefaultLookAndFeelDecorated(true);
+	    JFrame frame = new JFrame("Draw Line");
+	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    frame.setBackground(Color.white);
+	    frame.setSize(200, 200);
+	 
+	    PentagramPanel panel = new PentagramPanel();
+	    panel.initializeComponent();
+	    
+	 
+	    frame.getContentPane().add(panel);
+	 
+	    frame.setVisible(true);
+	}
+
+}

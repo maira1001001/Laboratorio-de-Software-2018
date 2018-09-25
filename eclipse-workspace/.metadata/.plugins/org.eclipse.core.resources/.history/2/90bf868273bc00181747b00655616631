@@ -1,0 +1,21 @@
+package compositor;
+
+enum Figures {
+	SEMIBREVE("Semibreve"),
+	MINIM("Blanca"),
+	CROTCHET("Negra"),
+	QUAVER("Corchea"),
+	SEMIQUAVER("Semicorchea"),
+	DEMISEMIAVER("Fusa"),
+	HEMIDEMIQUAVER("Semicorchea");
+
+	private final String symbol;
+	
+	Figures(String symbol){
+		this.symbol = symbol;
+	}
+	
+	public String toString() {
+		return name().toLowerCase();
+	}
+}

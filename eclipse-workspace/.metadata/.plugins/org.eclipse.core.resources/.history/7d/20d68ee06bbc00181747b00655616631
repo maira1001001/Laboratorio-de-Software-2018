@@ -1,0 +1,10 @@
+package compositor;
+
+public class Testing {
+
+	public static void main(String args[]) {
+		String path = "images/img.png";
+		URL url = Testing.class.getResource(path);
+	}
+	
+}
