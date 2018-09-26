@@ -4,7 +4,7 @@
 3. **When executing**: After execute the compiled program `name.java`, the jre generates a file with extension `.jar`
 
 ## Within console
-1. **When executing**: first search the file location (usually within the workspace, inside the package name -estudiante-). Second find the `bin` folder and select the class which contains an entry point (TestEstudiante). Thrird, write the following command "$java estudiante.TestEstudiante". 
+1. **When executing**: first search the file location (usually within the workspace, inside the package name -estudiante-). Second find the `bin` folder and select the class which contains an entry point (TestEstudiante). Thrird, write the following command `$java estudiante.TestEstudiante`
 
 ## Build .jar
 We can build this file with eclipse (new->jar). Remember to select the entry point (TestEstudiante in this case) and choose a name (tp1.jar). To execute this file, write the following command `$ java -jar  tp1.jar`.
