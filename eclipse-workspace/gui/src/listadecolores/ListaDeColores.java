@@ -3,27 +3,15 @@ package listadecolores;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JList;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
 public class ListaDeColores {
 
 	private JFrame frame;
-	private ColorList colorListPanel;
+	private ColorList colorList;
 	private JTextField textField;
-	private JPanel buttonsPanel;
-	private JButton addButton;
-	private JButton deleteButton;
+	private ActionButtons buttons;
 
 	/**
 	 * Launch the application.
@@ -53,72 +41,49 @@ public class ListaDeColores {
 	 */
 	private void initialize() {
 		initializeFrameConfiguration();
-		initializeColorListJlist();
-		initializeInputTextJTextField();
-		initializeAddDeleteJButton();
+		initializeComponents();
+		addEventsToComponents();
 		launchApplication();
 	}
-
+	
 	private void initializeFrameConfiguration() {
 		frame = new JFrame("Lista de Colores TP4#2");
-		frame.setBounds(100, 100, 650, 180);
+		frame.setBounds(100, 100, 850, 180);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new FlowLayout());
 		//frame.setIconImage(new ImageIcon(imgURL).getImage());
 	}
 	
-	private void initializeColorListJlist() {
-		colorListPanel = new ColorList(); 
-		colorListPanel.addDefaultColors();
-		colorListPanel.getList().addListSelectionListener(new ListSelectionListener(){
-			@Override
-			public void valueChanged(ListSelectionEvent e) {
-				addButton.setEnabled(true);
-			}
-		});
-//		addListSelectionListener(new ListSelectionListener() {
-//		     public void valueChanged(ListSelectionEvent e) {
-//		           deleteConfirmButton.setEnabled(true);//Enable here
-//		 }
-		
+	private void initializeComponents() {
+		createAndInitializeColorList();
+		createAndInitializeActionButtons();
+		createAndInitializeInputText();
 	}
 	
-	private void initializeAddDeleteJButton() {
-		buttonsPanel = new JPanel();
-	    addButton = new JButton("Agregar");
-	    deleteButton = new JButton("Borrar");
-	    deleteButton.setEnabled(false);
-	    buttonsPanel.add(addButton);
-	    buttonsPanel.add(deleteButton);
-	    
-	    addButton.addActionListener(new ActionListener() {
-	        @Override
-			public void actionPerformed(ActionEvent e) {
-				String newColor = textField.getText();
-				if (!newColor.isEmpty()) {
-					colorListPanel.addColor(newColor);
-				}
-			}
-	      });
-	    
-	    deleteButton.addActionListener(new ActionListener() {
-	        @Override
-			public void actionPerformed(ActionEvent e) {
-				String newColor = textField.getText();
-				colorListPanel.deleteColorSelected();
-			}
-	      });
+	private void createAndInitializeColorList() {
+		colorList = new ColorList(); 
+		colorList.addDefaultColors();
 	}
-
-	private void initializeInputTextJTextField() {
+	
+	private void createAndInitializeActionButtons() {
+		buttons = new ActionButtons();
+	}
+	
+	private void createAndInitializeInputText() {
 		textField = new JTextField(20);
 		textField.setPreferredSize(new Dimension(15,25));
 	}
 	
+	private void addEventsToComponents() {
+		colorList.addOnClickAction(buttons.getDeleteButton());
+		buttons.addActionToAddButton(colorList, textField);
+		buttons.addActionToDeleteButton(colorList);
+	}
+
 	private void launchApplication() {
-		frame.add(colorListPanel);
+		frame.add(colorList);
 		frame.add(textField);
-		frame.add(buttonsPanel);
+		frame.add(buttons);
 	}
 
 }
