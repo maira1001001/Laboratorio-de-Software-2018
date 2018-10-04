@@ -24,7 +24,7 @@ public class Subject {
 		this.studentsSortedSetSortedById = new TreeSet<Student>();
 		this.studentsSortedSetSortedByLastName = new TreeSet<Student>(new StudentComparator());
 	}
-	
+
 	public void addStudentToListSortedById(Student s) {
 		this.studentsListSortedById.add(s);
 		Collections.sort(this.studentsListSortedById);

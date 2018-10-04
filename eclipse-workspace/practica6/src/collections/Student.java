@@ -1,6 +1,6 @@
 package collections;
 
-public class Student implements Comparable<Student>{
+public class Student extends Person implements Comparable<Student>{
 	
 	private int id;
 	private String name;

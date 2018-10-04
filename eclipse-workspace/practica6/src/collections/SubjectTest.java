@@ -1,5 +1,7 @@
 package collections;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class SubjectTest {
@@ -37,6 +39,10 @@ public class SubjectTest {
 			System.out.println(s);
 		}
 	
+		List<? extends Person> l;
+		l = new ArrayList<Person>();
+		//l.add(new Student(1,"Eva", "Duarte", "12345"));
+		
 	}
 
 	
