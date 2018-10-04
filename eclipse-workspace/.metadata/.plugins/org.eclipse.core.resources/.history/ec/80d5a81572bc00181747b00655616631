@@ -1,5 +1,0 @@
-package compositor;
-
-public enum Figures {
-
-}
