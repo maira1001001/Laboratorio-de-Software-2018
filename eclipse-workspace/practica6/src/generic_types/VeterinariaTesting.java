@@ -11,9 +11,9 @@ public class VeterinariaTesting {
 		Veterinaria vet4 = new Veterinaria ();
 		vet4.setAnimal(new Perro());
 		
-		Veterinaria vet5 = new Veterinaria <?>();
-		Veterinaria <? extends Animal> vet6 = new Veterinaria<Gato>();
-		vet6.setAnimal(new Gato());
+//		Veterinaria vet5 = new Veterinaria <?>();
+//		Veterinaria <? extends Animal> vet6 = new Veterinaria<Gato>();
+//		vet6.setAnimal(new Gato());
 	}
 	
 }
