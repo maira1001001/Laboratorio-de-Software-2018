@@ -1,13 +1,5 @@
 package ejercicio2;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
-
 /*
 La salida en el archivo AchivoMapeado.txt sería:
 <nombreClase>Mapeado</nombreClase>
