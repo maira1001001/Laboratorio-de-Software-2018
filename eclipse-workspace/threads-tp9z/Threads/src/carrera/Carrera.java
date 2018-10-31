@@ -14,7 +14,7 @@ public class Carrera {
 	static final int N_RUNNERS = 5;
 	private ExecutorService exec;
 	private Runner[] runners;
-	
+
 	/**
 	 * Launch the application.
 	 */
@@ -37,8 +37,7 @@ public class Carrera {
 	public Carrera() {
 		initialize();
 	}
-	
-	
+
 	public static boolean esLaMeta() {
 		return false;
 	}
@@ -49,8 +48,8 @@ public class Carrera {
 	private void initialize() {
 		runners = new Runner[N_RUNNERS];
 		initializeComponents();
-		//initializeRunners();
-		//createAndExecuteRunners();
+		// initializeRunners();
+		// createAndExecuteRunners();
 	}
 
 	private void createAndExecuteRunners() {
@@ -73,9 +72,6 @@ public class Carrera {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().add(runners[0]);
-		
-		}
-	}
 
-	 
+	}
 }

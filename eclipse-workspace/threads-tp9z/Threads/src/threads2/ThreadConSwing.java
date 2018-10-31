@@ -1,4 +1,4 @@
-package threads;
+package threads2;
 
 import java.awt.EventQueue;
 import java.util.concurrent.TimeUnit;
