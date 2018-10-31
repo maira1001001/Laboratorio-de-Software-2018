@@ -1,13 +1,9 @@
 INDEX VERSION 1.131+/home/baila/git-projects/laboratorio-de-software-2018/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.core
 2771403403.index
 3885805113.index
-4071352734.index
-2773561495.index
 2630498905.index
-1394219830.index
 3888198363.index
 3721837726.index
-4123763505.index
 1913109094.index
 742522455.index
 120211678.index
@@ -16,7 +12,8 @@ INDEX VERSION 1.131+/home/baila/git-projects/laboratorio-de-software-2018/eclips
 2066489604.index
 3214207201.index
 46282419.index
+2016113836.index
 2233963263.index
-11864067.index
 2982035129.index
+11864067.index
 1932949083.index
